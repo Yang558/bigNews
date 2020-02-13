@@ -21,6 +21,32 @@ $(function () {
     })
 
 
+    $('.menu>div.level01').on('click',function(){
+        $(this).addClass('active').siblings('div').removeClass('active');
+
+        if ($(this).index() == 1) {
+            $('ul.level02').slideToggle();
+            $(this).find('b').toggleClass('rotate0');
+
+            $('ul.level02>li:eq(0)').trigger('click')
+        }
+    });
+
+
+    $('ul.level02>li').on('click',function(){
+        $(this).addClass('active').siblings('li').removeClass('active')
+    })
+
+
+
+
+
+
+
+
+
+
+
     // let xhr = new XMLHttpRequest();
     // xhr.open('get','http://localhost:8080/api/v1/admin/user/info');
     // xhr.setRequestHeader('Authorization',localStorage.getItem('token'));
