@@ -32,7 +32,7 @@ $(function () {
             success: function (backData) {
                 // console.log(backData);
                 if (backData.code == 200) {
-                    // alert('修改成功~~');
+                    alert('修改成功~~');
 
                     parent.window.location.reload();
                     // $.ajax({
