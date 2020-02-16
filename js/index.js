@@ -48,4 +48,16 @@ $(function () {
             }
         }
     })
+
+    // 焦点关注
+    $.ajax({
+        type: 'get',
+        url: 'http://localhost:8080/api/v1/index/attention',
+        success: function (backData) {
+            if (backData.code == 200) {
+                var resHtml = template('attention_temp', backData);
+                $('.guanzhu_list').html(resHtml);
+            }
+        }
+    })
 })

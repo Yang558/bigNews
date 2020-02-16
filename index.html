@@ -269,6 +269,12 @@
         </li>
         {{/each}}
     </script>
+    <!-- 焦点关注模板 -->
+    <script id="attention_temp" type="text/html">
+        {{each data v}}
+        <li><a href="./article.html?id={{v.id}}">{{v.intro}}</a></li>
+        {{/each}}
+    </script>
 </body>
 
 </html>
