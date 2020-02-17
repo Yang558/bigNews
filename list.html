@@ -227,6 +227,23 @@
     </div>
     <!-- 导包template -->
     <script src="./js/template-web.js"></script>
+    <script src="./js/list.js"></script>
+    <!-- list页面模板 -->
+    <script id="list_temp" type="text/html">
+        {{each data.data v}}
+        <div class="common_news_list">
+            <a href="./article.html?id={{v.id}}" class="list_pic"><img src="{{v.cover}}" alt=""></a>
+            <h4><a href="./article.html?id={{v.id}}">{{v.title}}</a></h4>
+            <p>{{v.intro}}
+            </p>
+            <div class="new_info">
+                <span>标签：{{v.category}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i>&nbsp;阅读( {{v.read}}
+                    )&nbsp;&nbsp;&nbsp;<i class="fa fa-commenting"></i>&nbsp;评论( {{v.comments}} )</span>
+                <b>发布于 {{v.date}}</b>
+            </div>
+        </div>
+        {{/each}}
+    </script>
 </body>
 
 </html>

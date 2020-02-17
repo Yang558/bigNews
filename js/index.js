@@ -47,7 +47,7 @@ $(function () {
                 $('.comment_list').html(resHtml)
             }
         }
-    })
+    });
 
     // 焦点关注
     $.ajax({
@@ -58,6 +58,26 @@ $(function () {
                 var resHtml = template('attention_temp', backData);
                 $('.guanzhu_list').html(resHtml);
             }
+        }
+    });
+
+    // 文章类别
+    $.ajax({
+        url: 'http://localhost:8080/api/v1/index/category',
+        success: function (backData) {
+            var resHtml = template('category_temp', backData);
+            $('ul.level_two').html('<li class="up"></li>' + resHtml);
+            $('ul.left_menu').html(resHtml);
+        }
+    });
+
+    // 搜索
+    $('.search_btn').on('click', function () {
+        var searchTxt = $('.search_txt').val().trim();
+        if (searchTxt == '') {
+            alert('搜索内容不能为空~~');
+        } else {
+            window.location.href = '../list.html?search=' + searchTxt;
         }
     })
 })
